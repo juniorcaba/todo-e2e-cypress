@@ -27,7 +27,6 @@ class TodoPage{
             .find('.destroy')
             .click({ force: true });
     }
-//test
 
 }
 
