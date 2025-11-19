@@ -8,12 +8,11 @@ describe('TodoPage To-Do', () => {
         todo.visit();
     });
 
-        it ('Add and Delete Task', () => {
+        it ('Add Task', () => {
         todo.header.should('have.text', 'todos')
         todo.inputBar.should('be.visible');
-        todo.addTask('Hector Caba');
-        todo.addTask('Wally Pena');
-        todo.deleteTask(0);
+        todo.addTask('Selena Gomez');
+        todo.addTask('Wanderlust');
         });
 
         it ('Add and Edit Tasks', () => {
@@ -26,32 +25,30 @@ describe('TodoPage To-Do', () => {
 
         it ('Completed tasks', () => {
         todo.header.should('have.text', 'todos')
-        todo.addMultipleTasks(['Base de datos', 'Power BI', 'Dell']);
+        todo.addMultipleTasks(['Data base', 'Power BI', 'Dell']);
         todo.completeTask(1);
         });   
 
         it ('Filter by Actives tasks', () => {
         todo.header.should('have.text', 'todos')
-        todo.addMultipleTasks(['Base de datos', 'Power BI', 'Dell']);
+        todo.addMultipleTasks(['Data base', 'Power BI', 'Dell']);
         todo.completeTask(0);
         cy.contains('Active').click();
         });
 
         it ('Filter by Completed tasks', () => {
         todo.header.should('have.text', 'todos')
-        todo.addMultipleTasks(['Base de datos', 'Power BI', 'Dell']);
+        todo.addMultipleTasks(['Data base', 'Power BI', 'Dell']);
         todo.completeTask(1);
         cy.contains('Completed').click();
         });
 
         it ('Clear completed tasks', () => {
         todo.header.should('have.text', 'todos')
-        todo.addMultipleTasks(['Base de datos', 'Power BI', 'Dell']);
+        todo.addMultipleTasks(['Data base', 'Power BI', 'Dell']);
         todo.completeTask(0);
         todo.completeTask(1);
         cy.contains('Clear completed').click();
         });
-
-
 
 })
