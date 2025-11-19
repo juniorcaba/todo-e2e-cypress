@@ -16,7 +16,6 @@ class TodoPage{
         this.taskList.eq(indice).find('.toggle').click();
     }
 
-
     visit(){
     cy.visit('https://demo.playwright.dev/todomvc/#/')
     }
